@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_example/tasks/task_08/presentation/components/question_category_image.dart';
 import 'package:flutter_example/tasks/task_08/presentation/components/question_category_tag.dart';
-import 'package:flutter_example/tasks/task_08/presentation/question_detail_page/question_detail_page.dart';
+import 'package:flutter_example/tasks/task_08/presentation/helpers/route_name_helper.dart';
 import 'package:flutter_example/tasks/task_08/presentation/objects/question.dart';
 
 class QuestionWidget extends StatelessWidget {
@@ -32,9 +31,12 @@ class QuestionWidget extends StatelessWidget {
             borderRadius: borderRadius,
           ),
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return QuestionDetailPage(question: question);
-            }));
+            Navigator.of(context).pushNamed(
+              RouteNameHelper.questionDetail,
+              arguments: {
+                'question': question,
+              },
+            );
           },
           child: Padding(
             padding: const EdgeInsets.all(12),

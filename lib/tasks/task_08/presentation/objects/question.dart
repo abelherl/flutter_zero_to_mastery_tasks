@@ -16,13 +16,18 @@ class Question {
 }
 
 enum QuestionCategory {
-  general(icon: AssetImage('assets/category_icons/general.png')),
-  sport(icon: AssetImage('assets/category_icons/sport.png')),
-  music(icon: AssetImage('assets/category_icons/music.png'));
+  general(
+      name: 'General', icon: AssetImage('assets/category_icons/general.png')),
+  sport(
+      name: 'Sport',icon: AssetImage('assets/category_icons/sport.png')),
+  music(
+      name: 'Music',icon: AssetImage('assets/category_icons/music.png'));
 
   const QuestionCategory({
+    required this.name,
     required this.icon,
   });
 
+  final String name;
   final AssetImage icon;
 }

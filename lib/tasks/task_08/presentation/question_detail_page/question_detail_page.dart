@@ -4,12 +4,7 @@ import 'package:flutter_example/tasks/task_08/presentation/objects/question.dart
 import 'package:flutter_example/tasks/task_08/presentation/question_detail_page/widgets/stack_item.dart';
 
 class QuestionDetailPage extends StatefulWidget {
-  final Question question;
-
-  const QuestionDetailPage({
-    Key? key,
-    required this.question,
-  }) : super(key: key);
+  const QuestionDetailPage({Key? key}) : super(key: key);
 
   @override
   State<QuestionDetailPage> createState() => _QuestionDetailPageState();
@@ -17,10 +12,13 @@ class QuestionDetailPage extends StatefulWidget {
 
 class _QuestionDetailPageState extends State<QuestionDetailPage> {
   int _currentIndex = 0;
+  late Question question;
 
   @override
   Widget build(BuildContext context) {
-    final question = widget.question;
+    final Map<String, dynamic>? args =
+        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+    question = args!['question'];
 
     return Scaffold(
       appBar: AppBar(
