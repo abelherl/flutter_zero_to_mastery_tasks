@@ -1,16 +1,9 @@
-# flutter_example
+# Flutter Zero to Mastery Tasks
 
-A new Flutter project.
+My tasks for the Udemy course ["Dart & Flutter - Zero to Mastery [2023] + Clean Architecture"](https://www.udemy.com/course/flutter-made-easy-zero-to-mastery)
 
-## Getting Started
+## Summary
 
-This project is a starting point for a Flutter application.
+```course_tasks/``` - PDF for the tasks.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```lib/tasks/``` - Files and directory for each task.
