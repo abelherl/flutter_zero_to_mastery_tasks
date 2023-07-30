@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_example/tasks/task_08/presentation/components/fade_indexed_stack.dart';
 import 'package:flutter_example/tasks/task_08/presentation/components/question_category_tag.dart';
 import 'package:flutter_example/tasks/task_08/objects/question.dart';
 import 'package:flutter_example/tasks/task_08/presentation/question_detail_page/widgets/icon_floating_action_button.dart';
@@ -40,7 +41,8 @@ class _QuestionDetailPageState extends State<QuestionDetailPage> {
             ),
             const SizedBox(height: 20),
             Expanded(
-              child: IndexedStack(
+              child: FadeIndexedStack(
+                duration: const Duration(milliseconds: 200),
                 index: _currentIndex,
                 children: [
                   const SizedBox(),
