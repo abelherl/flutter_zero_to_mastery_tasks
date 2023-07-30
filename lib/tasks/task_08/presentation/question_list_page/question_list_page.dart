@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_example/tasks/task_08/application/theme_service.dart';
 import 'package:flutter_example/tasks/task_08/objects/question.dart';
 import 'package:flutter_example/tasks/task_08/presentation/question_add_page/question_add_page.dart';
 import 'package:flutter_example/tasks/task_08/presentation/question_list_page/widgets/question_list_view.dart';
 import 'package:flutter_example/tasks/task_08/presentation/theme_animation_page/theme_animation_page.dart';
-import 'package:provider/provider.dart';
 
 class QuestionListPage extends StatefulWidget {
   const QuestionListPage({super.key});
