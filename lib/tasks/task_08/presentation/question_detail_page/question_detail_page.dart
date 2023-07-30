@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_example/tasks/task_08/presentation/components/question_category_tag.dart';
-import 'package:flutter_example/tasks/task_08/presentation/objects/question.dart';
+import 'package:flutter_example/tasks/task_08/objects/question.dart';
+import 'package:flutter_example/tasks/task_08/presentation/question_detail_page/widgets/icon_floating_action_button.dart';
 import 'package:flutter_example/tasks/task_08/presentation/question_detail_page/widgets/stack_item.dart';
 
 class QuestionDetailPage extends StatefulWidget {
@@ -95,49 +96,5 @@ class _QuestionDetailPageState extends State<QuestionDetailPage> {
     setState(() {
       isIncrement ? _currentIndex++ : _currentIndex--;
     });
-  }
-}
-
-class IconFloatingActionButton extends StatelessWidget {
-  final String heroTag;
-  final Function() onPressed;
-  final bool isDisabled;
-  final bool isIncrement;
-
-  const IconFloatingActionButton({
-    Key? key,
-    required this.heroTag,
-    required this.onPressed,
-    required this.isDisabled,
-    required this.isIncrement,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return FloatingActionButton(
-      heroTag: heroTag,
-      backgroundColor: Colors.white,
-      onPressed: () => onPressed(),
-      child: Icon(
-        _getButtonIcon(),
-        color: _getButtonColor(),
-      ),
-    );
-  }
-
-  Color _getButtonColor() {
-    if (isDisabled) {
-      return Colors.black38;
-    } else if (isIncrement) {
-      return Colors.green;
-    }
-    return Colors.red;
-  }
-
-  IconData _getButtonIcon() {
-    if (isIncrement) {
-      return Icons.chevron_right;
-    }
-    return Icons.chevron_left;
   }
 }

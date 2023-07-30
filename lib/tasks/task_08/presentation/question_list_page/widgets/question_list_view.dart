@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_example/tasks/task_08/presentation/objects/question.dart';
+import 'package:flutter_example/tasks/task_08/objects/question.dart';
 import 'package:flutter_example/tasks/task_08/presentation/question_list_page/widgets/question_widget.dart';
 
 class QuestionListView extends StatelessWidget {

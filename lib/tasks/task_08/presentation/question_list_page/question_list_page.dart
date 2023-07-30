@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_example/tasks/task_08/presentation/objects/question.dart';
+import 'package:flutter_example/tasks/task_08/application/theme_service.dart';
+import 'package:flutter_example/tasks/task_08/objects/question.dart';
 import 'package:flutter_example/tasks/task_08/presentation/question_add_page/question_add_page.dart';
 import 'package:flutter_example/tasks/task_08/presentation/question_list_page/widgets/question_list_view.dart';
+import 'package:flutter_example/tasks/task_08/presentation/theme_animation_page/theme_animation_page.dart';
+import 'package:provider/provider.dart';
 
 class QuestionListPage extends StatefulWidget {
   const QuestionListPage({super.key});
@@ -57,6 +60,7 @@ class _QuestionListPageState extends State<QuestionListPage> {
   static const List<String> _labels = [
     'Questions',
     'Ask A Question',
+    'Theme',
   ];
   int _currentIndex = 0;
   bool _isDesktop = false;
@@ -64,7 +68,7 @@ class _QuestionListPageState extends State<QuestionListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: Theme.of(context).colorScheme.tertiary,
       appBar: AppBar(
         title: Text(_labels[_currentIndex]),
       ),
@@ -77,6 +81,7 @@ class _QuestionListPageState extends State<QuestionListPage> {
               children: [
                 QuestionListView(questionList: _questionList),
                 QuestionAddPage(onSubmit: (question) => _onSubmit(question)),
+                const ThemeAnimationPage(),
               ],
             ),
           ),
@@ -111,6 +116,10 @@ class _QuestionListPageState extends State<QuestionListPage> {
             icon: const Icon(Icons.add),
             label: Text(_labels[1]),
           ),
+          NavigationRailDestination(
+            icon: const Icon(Icons.animation),
+            label: Text(_labels[2]),
+          ),
         ],
         onDestinationSelected: (index) => setState(() => _currentIndex = index),
       );
@@ -121,9 +130,6 @@ class _QuestionListPageState extends State<QuestionListPage> {
     }
 
     return BottomNavigationBar(
-      backgroundColor: Theme.of(context).primaryColor,
-      selectedItemColor: Colors.white,
-      unselectedItemColor: Colors.white54,
       currentIndex: _currentIndex,
       onTap: (index) => setState(() => _currentIndex = index),
       items: [
@@ -134,6 +140,10 @@ class _QuestionListPageState extends State<QuestionListPage> {
         BottomNavigationBarItem(
           icon: const Icon(Icons.add),
           label: _labels[1],
+        ),
+        BottomNavigationBarItem(
+          icon: const Icon(Icons.animation),
+          label: _labels[2],
         ),
       ],
     );

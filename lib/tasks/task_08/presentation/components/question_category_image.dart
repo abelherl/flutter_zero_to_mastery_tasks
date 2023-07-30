@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_example/tasks/task_08/presentation/objects/question.dart';
+import 'package:flutter_example/tasks/task_08/objects/question.dart';
 
 class QuestionCategoryImage extends StatelessWidget {
   final QuestionCategory category;
@@ -13,7 +13,7 @@ class QuestionCategoryImage extends StatelessWidget {
     return Image(
       height: 16,
       width: 16,
-      color: Colors.blue,
+      color: Theme.of(context).colorScheme.primary,
       image: category.icon,
     );
   }
